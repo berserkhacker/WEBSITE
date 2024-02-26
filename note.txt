@@ -1,0 +1,16 @@
+<?php
+
+include 'connect.php';
+
+$h = $_POST['region'];
+
+// Prepare INSERT statement
+$stmt = $db->prepare("INSERT INTO students (region) VALUES (:h));
+
+// Bind parameters
+
+$stmt->bindParam(':h', $h);
+$stmt->execute();
+  
+
+?>
